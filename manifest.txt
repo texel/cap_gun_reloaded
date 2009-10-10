@@ -1,8 +1,8 @@
-cap_gun.gemspec
+cap_gun_reloaded.gemspec
 CHANGELOG
 init.rb
 install.rb
-lib/cap_gun.rb
+lib/cap_gun_reloaded.rb
 manifest.txt
 MIT-LICENSE
 Rakefile

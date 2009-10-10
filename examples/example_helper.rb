@@ -2,7 +2,7 @@ ENV["RAILS_ENV"] = "test"
 require 'net/smtp'
 require "mocha"
 require 'micronaut'
-require File.join(File.dirname(__FILE__), *%w[.. lib cap_gun])
+require File.join(File.dirname(__FILE__), *%w[.. lib cap_gun_reloaded])
 
 def silence_warnings
   old_verbose, $VERBOSE = $VERBOSE, nil

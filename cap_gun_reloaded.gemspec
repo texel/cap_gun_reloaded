@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Rob Sanheim", "Muness Alrubaie", "Relevance"]
+  s.authors = ["Rob Sanheim", "Muness Alrubaie", "Relevance", "Leigh Caplan"]
   s.date = %q{2009-06-21}
   s.description = %q{Super simple capistrano deployment notifications.}
   s.email = %q{opensource@thinkrelevance.com}
@@ -20,13 +20,13 @@ Gem::Specification.new do |s|
      "README.markdown",
      "Rakefile",
      "VERSION",
-     "cap_gun.gemspec",
+     "cap_gun_reloaded.gemspec",
      "examples/cap_gun_example.rb",
      "examples/example_helper.rb",
      "examples/presenter_example.rb",
      "init.rb",
      "install.rb",
-     "lib/cap_gun.rb",
+     "lib/cap_gun_reloaded.rb",
      "lib/cap_gun/presenter.rb",
      "manifest.txt",
      "tasks/cap_bot_tasks.rake",
@@ -37,12 +37,11 @@ Gem::Specification.new do |s|
      "vendor/action_mailer_tls/sample/smtp_gmail.rb",
      "version.yml"
   ]
-  s.homepage = %q{http://github.com/relevance/cap_gun}
+  s.homepage = %q{http://github.com/texel/cap_gun_reloaded}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubyforge_project = %q{thinkrelevance}
   s.rubygems_version = %q{1.3.4}
-  s.summary = %q{Bang! You're deployed.}
+  s.summary = %q{Bang! You're deployed. And you work with Onehub's deploy strategy!}
   s.test_files = [
     "examples/cap_gun_example.rb",
      "examples/example_helper.rb",
