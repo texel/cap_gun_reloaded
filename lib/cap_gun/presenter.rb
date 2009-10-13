@@ -56,7 +56,7 @@ module CapGun
     end
 
     def git_log_messages
-      messages = `git log #{capistrano[:previous_revision]}..#{capistrano[:current_revision]} --pretty=format:%h:%s`
+      messages = `git log #{capistrano[:previous_revision]}..#{capistrano[:latest_revision]} --pretty=format:%h:%s`
       exit_code.success? ? messages : "N/A"
     end
     
@@ -73,6 +73,10 @@ module CapGun
       return unless match
       local = convert_from_utc(match[1])
       local.strftime("%B #{local.day.ordinalize}, %Y %l:%M %p #{local_timezone}").gsub(/\s+/, ' ').strip
+    end
+    
+    def present_time(time)
+      time.strftime("%B #{time.day.ordinalize}, %Y %l:%M %p #{local_timezone}").gsub(/\s+/, ' ').strip
     end
     
     # Use some DateTime magicrey to convert UTC to the current time zone
@@ -93,7 +97,7 @@ module CapGun
     end
     
     def release_time
-      humanize_release_time(capistrano[:current_release])
+      present_time(Time.now)
     end
     
     def previous_release_time 
@@ -114,12 +118,9 @@ module CapGun
 #{comment}
 Deployment details
 ==================
-Release: #{capistrano[:current_release]}
-Release Time: #{release_time}
-Release Revision: #{capistrano[:current_revision]}
+Current Branch: #{capistrano[:current_revision]}
 
-Previous Release: #{capistrano[:previous_release]}
-Previous Release Time: #{previous_release_time}
+Release Revision: #{capistrano[:latest_revision]}
 Previous Release Revision: #{capistrano[:previous_revision]}
 
 Repository: #{capistrano[:repository]}
