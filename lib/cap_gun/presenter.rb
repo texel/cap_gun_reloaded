@@ -1,4 +1,5 @@
 require 'etc'
+require 'active_support/core_ext/integer/inflections'
 
 module CapGun
   class Presenter
