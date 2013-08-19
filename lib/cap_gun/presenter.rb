@@ -57,7 +57,7 @@ module CapGun
     end
 
     def git_log_messages
-      messages = `git log #{capistrano[:previous_revision]}..#{capistrano[:latest_revision]} --pretty=format:%h:%s\ [%an]`
+      messages = `git log #{capistrano[:previous_revision]}..#{capistrano[:latest_revision]} --pretty="format:%h:%s\ [%an]"`
       exit_code.success? ? messages : "N/A"
     end
     
